@@ -80,7 +80,7 @@ def start(token):
         print(f"Token {__tokens.index(token)+1} Had a error... {e} Exiting")
         return
     for on in range(amount):
-        ff = open("onfile.txt","w")
+        ff = open("on.txt","w")
         r = requests.post('https://discordapp.com/api/v9/users/@me/channels', headers=headers, json={"recipients":[f"{owner_id}", f"{target_id}"]})
         jsonn = r.json()
         if "retry_after" in jsonn:
