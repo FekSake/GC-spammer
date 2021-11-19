@@ -33,7 +33,11 @@ __tokens = []
 
 try:
     file = open("tokens.txt", "r")
-    file_loaded = True
+    if file.readline() == "tokens-here":
+        print(f"{Fore.MAGENTA}Couldnt load tokens from file 'tokens.txt'\nEnter token manually [input hidden]")
+        file_loaded = False
+    else:
+        file_loaded = True
 except Exception as e:
     print(f"{Fore.MAGENTA}Couldnt load tokens from file 'tokens.txt'\nEnter token manually [input hidden]")
     file_loaded = False
@@ -77,7 +81,6 @@ def start(token):
         return
     for on in range(amount):
         ff = open("onfile.txt","w")
-        #proxy = {"http": f"{random.choice(proxies)}"}
         r = requests.post('https://discordapp.com/api/v9/users/@me/channels', headers=headers, json={"recipients":[f"{owner_id}", f"{target_id}"]})
         jsonn = r.json()
         if "retry_after" in jsonn:
