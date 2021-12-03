@@ -1,4 +1,7 @@
 # GC-spammer
+
+adding people too fast gets you ratelimited now, so bascily the spammer is useless/patched
+
 My discord group chat creator,
 choose a token or multiple tokens,
 add a target user, (The user must be friends with the selected tokens)
